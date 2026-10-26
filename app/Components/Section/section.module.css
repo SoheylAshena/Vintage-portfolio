@@ -1,10 +1,10 @@
 .section {
   width: 100%;
-  padding-left: 200px;
+  padding-inline: 220px 56px;
+  scroll-margin-top: 100px;
 }
-
-@media screen and (max-width: 1100px) {
+@media (max-width: 1100px) {
   .section {
-    padding: 20px;
+    padding-inline: 24px;
   }
 }

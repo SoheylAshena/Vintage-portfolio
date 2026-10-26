@@ -19,7 +19,7 @@ const useContact = () => {
         "service_srvdg09",
         "template_564qdoo",
         form.current,
-        "aXwBSC3r1y427hVfk"
+        "aXwBSC3r1y427hVfk",
       )
       .then(() => {
         setIsSending(false);
@@ -28,7 +28,9 @@ const useContact = () => {
       })
       .catch((error) => {
         setIsSending(false);
-        setError(`Failed to send message, Check your connection.`);
+        setError(
+          `پیام ارسال نشد. لطفاً اتصال اینترنت را بررسی کنید و دوباره تلاش کنید.`,
+        );
         console.error("Error sending email:", error.message);
       });
   };

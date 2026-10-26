@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
+import Navbar from "@/sections/navbar";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Vintage Portfolio",
-  description: "A portfolio built with Next.js and Tailwind CSS.",
+  title: {
+    default: "لومس | طراحی و توسعه وب",
+    template: "%s | لومس",
+  },
+  description:
+    "لومس، استودیو طراحی و توسعه وب؛ طراحی رابط کاربری، ساخت وب‌سایت و بازطراحی تجربه‌های دیجیتال متناسب با کسب‌وکار شما.",
 };
 
 export default function RootLayout({
@@ -12,8 +17,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="fa" dir="rtl">
+      <body>
+        <Navbar />
+        {children}
+        <div className="texture"></div>
+      </body>
     </html>
   );
 }

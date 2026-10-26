@@ -1,13 +1,27 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "Lovers Quarrel";
-  src: url("/fonts/LoversQuarrel-Regular.woff2") format("woff2");
+  font-family: "Lomes Naskh";
+  src: url("/fonts/Far_Naskh.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Lomes Nastaliq";
+  src: url("/fonts/IranNastaliq.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lovers Quarrel";
+  src: url("/fonts/lovers-quarrel-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 *,
 *::after,
 *::before {
@@ -15,70 +29,299 @@
   margin: 0;
   padding: 0;
 }
-
 :root {
+  --font-body: "Lomes Naskh", Tahoma, serif;
+  --font-heading: "Lomes Nastaliq", "Lomes Naskh", serif;
   --color-bg: #ffe3ca;
   --color-primary: #773800;
   --color-secondary: #685644;
-  --color-accent: #000000;
+  --color-accent: #000;
   --color-accent-2: #502500;
   --color-faded: #685644ab;
+  --color-rule: #77380040;
   --divide-dis: 100px 0;
-
-  background-color: var(--color-bg);
+  background: var(--color-bg);
   color: var(--color-primary);
   fill: var(--color-primary);
   stroke: var(--color-primary);
   stroke-width: 0%;
-
-  font-family: "Lovers Quarrel";
+  font-family: var(--font-body);
 }
-
-.invisible {
-  fill: transparent;
+body {
+  font-size: 1.125rem;
+  line-height: 2;
 }
-
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-synthesis: none;
+  line-height: 2;
+  text-wrap: balance;
+}
 a {
   text-decoration: none;
   color: inherit;
 }
-
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 6px;
+}
+.invisible {
+  fill: transparent;
+}
 .content {
   max-width: 1500px;
-  margin: 0 auto;
+  margin-inline: auto;
 }
-
+.standalone {
+  max-width: 1500px;
+  margin-inline: auto;
+  padding-block: 45px;
+  min-height: 100svh;
+}
 .texture {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-image: url("/images/Texture.jpg");
+  inset: 0;
+  background-image: url("/images/texture.jpg");
   background-repeat: repeat;
   background-size: 10%;
   mix-blend-mode: hard-light;
   filter: brightness(0.6) saturate(0);
   pointer-events: none;
-  opacity: 50%;
+  opacity: 0.5;
   z-index: 1;
 }
-
-@media screen and (max-width: 1100px) {
+.projects,
+.services {
+  margin-block: 100px;
+}
+.eyebrow {
+  font-size: 0.95rem;
+  color: var(--color-secondary);
+}
+.section-heading {
+  max-width: 720px;
+  margin-bottom: 48px;
+}
+.section-heading h1,
+.section-heading h2 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 400;
+  line-height: 2;
+  margin-block: 16px;
+}
+.body-copy {
+  font-size: 1.125rem;
+  line-height: 2.2;
+  color: var(--color-secondary);
+  margin-bottom: 20px;
+}
+.page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  margin-top: 32px;
+}
+.text-link,
+.primary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 1rem;
+  padding-block: 12px;
+}
+.text-link {
+  border-bottom: 1px solid var(--color-primary);
+}
+.primary-link {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  padding: 14px 22px;
+}
+.primary-link:hover {
+  background: var(--color-accent-2);
+}
+.text-link:hover {
+  color: var(--color-accent-2);
+}
+.project-link {
+  display: block;
+}
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-block: 1px solid var(--color-rule);
+}
+.service-grid article {
+  padding: 32px 24px;
+}
+.service-grid article + article {
+  border-inline-start: 1px solid var(--color-rule);
+}
+.service-grid h3,
+.process-grid h3 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-block: 16px;
+}
+.process {
+  margin-top: 80px;
+}
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  list-style: persian inside;
+}
+.process-grid li {
+  border-top: 1px solid var(--color-rule);
+  padding-top: 20px;
+}
+.process-grid .body-copy {
+  font-size: 1rem;
+}
+.site-footer {
+  text-align: center;
+  padding-block: 60px;
+  margin-top: 60px;
+  border-top: 1px solid var(--color-rule);
+}
+.site-footer p {
+  font-family: "Lovers Quarrel", cursive;
+  font-size: 5rem;
+  line-height: 1;
+}
+.site-footer small {
+  display: block;
+  margin-top: 16px;
+}
+@media (max-width: 1100px) {
   .texture {
     background-size: 50%;
   }
+  .standalone {
+    padding-top: 100px;
+  }
+}
+@media (max-width: 700px) {
+  .service-grid,
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+  .service-grid article {
+    padding-inline: 0;
+  }
+  .service-grid article + article {
+    border-inline-start: 0;
+    border-top: 1px solid var(--color-rule);
+  }
+  .projects,
+  .services {
+    margin-block: 64px;
+  }
 }
 
-.projects {
-  margin: var(--divide-dis);
+/* Editorial sections give each page its own story without new layout components. */
+.editorial-section {
+  margin-block: 100px;
+}
+.editorial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 56px;
+}
+.editorial-grid h2,
+.invitation h2,
+.closing-note h2 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  line-height: 1.9;
+  margin-bottom: 24px;
+}
+.editorial-note {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-top: 24px;
+}
+.service-grid article {
   display: flex;
   flex-direction: column;
-  padding: 0 50px 0 250px;
 }
-
-@media screen and (max-width: 1100px) {
-  .projects {
-    padding: 20px;
+.service-detail {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-rule);
+  font-size: 0.95rem;
+  color: var(--color-secondary);
+}
+.invitation {
+  max-width: 800px;
+  margin-inline: auto;
+  text-align: center;
+  padding-block: 24px;
+}
+.invitation h2 {
+  margin-top: 24px;
+}
+.invitation .body-copy {
+  max-width: 620px;
+  margin-inline: auto;
+  margin-bottom: 32px;
+}
+.invitation-note,
+.form-note {
+  font-size: 1rem;
+  color: var(--color-secondary);
+  line-height: 2;
+}
+.invitation-note {
+  margin-top: 20px;
+}
+.closing-note {
+  margin-top: 80px;
+  padding-top: 48px;
+  border-top: 1px solid var(--color-rule);
+}
+.project-context {
+  max-width: 760px;
+  padding-block: 0 32px;
+}
+.project-context .body-copy {
+  margin-top: 12px;
+}
+.questions details {
+  border-top: 1px solid var(--color-rule);
+  padding-block: 20px;
+}
+.questions details:last-child {
+  border-bottom: 1px solid var(--color-rule);
+}
+.questions summary {
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 2;
+}
+.questions summary:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+.questions .body-copy {
+  margin-block: 16px 0;
+}
+@media (max-width: 700px) {
+  .editorial-section {
+    margin-block: 64px;
+  }
+  .editorial-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .editorial-grid .section-heading {
+    margin-bottom: 0;
   }
 }

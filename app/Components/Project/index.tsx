@@ -1,8 +1,8 @@
-import { useRef } from "react";
+"use client";
 
-import VideoColorMaskOverlay from "../AlphaVideoMask";
+import VideoColorMaskOverlay from "../alpha-video-mask";
 
-import Frame from "@/Assets/vectors/Project Frame.svg?react";
+import Frame from "@/assets/vectors/project-frame.svg?react";
 const vido = "/videos/3.1.webm";
 
 import styles from "./project.module.css";
@@ -22,8 +22,6 @@ const Project: React.FC<ProjectProps> = ({
   right,
   rotate,
 }) => {
-  const projRef = useRef(null);
-
   return (
     <VideoColorMaskOverlay
       videoSrc={vido}
@@ -31,19 +29,17 @@ const Project: React.FC<ProjectProps> = ({
       inverted={true}
       rotate={rotate}
     >
-      <div
-        ref={projRef}
-        className={`${styles.project} ${right ? styles.textRight : ""} ${
-          right ? styles.reverse : ""
-        }`}
-      >
-        <div className={`${styles.projFrame} `}>
+      <div className={`${styles.project} ${right ? styles.reverse : ""}`}>
+        <div className={styles.projFrame}>
           <Frame />
-          <p>{name}</p>
+          <p dir="ltr">{name}</p>
         </div>
-        <div className={styles.textContainer}>
-          <p className={styles.projTitle}>{title}</p>
+        <div>
+          <h3 className={styles.projTitle}>{title}</h3>
           <p className={styles.projDesc}>{desc}</p>
+          <span className={styles.visit}>
+            مشاهده وب‌سایت <span aria-hidden="true">↖</span>
+          </span>
         </div>
       </div>
     </VideoColorMaskOverlay>

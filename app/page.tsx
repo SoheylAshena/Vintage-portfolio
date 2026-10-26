@@ -1,20 +1,20 @@
 "use client";
 
-import Navbar from "./Layout/Navbar";
-import Main from "./Layout/Intro";
-import Projects from "./Layout/Projects";
-import Contact from "./Layout/Contact";
-import Divider from "./Components/Divider";
-import About from "./Layout/About";
-import TheEnd from "./Components/TheEnd";
-import Loading from "./Layout/Loading";
+import Services from "@/sections/services";
+import Main from "@/sections/intro";
+import Projects from "@/sections/projects";
+import { HomePerspective, HomeInvitation } from "@/sections/home-story";
+import Divider from "@/components/divider";
 
-import useLoading from "./Hooks/useLoading";
+import TheEnd from "@/components/the-end";
+import Loading from "@/sections/loading";
+
+import useLoading from "@/hooks/useLoading";
 
 import gsap from "gsap";
 import { DrawSVGPlugin, ScrollTrigger } from "gsap/all";
 
-import SmoothScroll from "./Components/SmoothScrollContent";
+import SmoothScroll from "@/components/smooth-scroll-content";
 
 gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
 
@@ -24,22 +24,19 @@ function App() {
   return (
     <>
       <Loading finished={!loading} />
-      <Navbar />
-
       <SmoothScroll>
-        <div className="content">
+        <main className="content">
           <Main loading={loading} />
+          <Divider />
+          <HomePerspective />
+          <Services />
           <Divider />
           <Projects />
           <Divider />
-          <About />
-          <Divider />
-          <Contact />
+          <HomeInvitation />
           <TheEnd />
-        </div>
+        </main>
       </SmoothScroll>
-
-      <div className="texture"></div>
     </>
   );
 }
