@@ -4,17 +4,17 @@ import Services from "@/sections/services";
 import Main from "@/sections/intro";
 import Projects from "@/sections/projects";
 import { HomePerspective, HomeInvitation } from "@/sections/home-story";
-import Divider from "@/components/divider";
+import Divider from "@/Components/Divider";
 
-import TheEnd from "@/components/the-end";
+import TheEnd from "@/Components/the-end";
 import Loading from "@/sections/loading";
 
-import useLoading from "@/hooks/useLoading";
+import useLoading from "@/Hooks/useLoading";
 
 import gsap from "gsap";
 import { DrawSVGPlugin, ScrollTrigger } from "gsap/all";
 
-import SmoothScroll from "@/components/smooth-scroll-content";
+import SmoothScroll from "@/Components/smooth-scroll-content";
 
 gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
 

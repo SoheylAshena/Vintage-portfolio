@@ -1,6 +1,6 @@
 import styles from "./contact.module.css";
 
-import Button from "@/assets/vectors/button.svg?react";
+import Button from "@/Assets/vectors/Button.svg?react";
 
 interface SendButtonInterface {
   isSending: boolean;

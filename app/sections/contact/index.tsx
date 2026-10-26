@@ -1,10 +1,10 @@
 "use client";
 
-import useContact from "@/hooks/useContact";
+import useContact from "@/Hooks/useContact";
 import Inputs from "./inputs";
 import SendButton from "./send-button";
 import SubmitMessage from "./submit-message";
-import Section from "@/components/section";
+import Section from "@/Components/Section";
 
 import styles from "./contact.module.css";
 

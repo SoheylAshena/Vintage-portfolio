@@ -1,4 +1,4 @@
-import DividerSvg from "@/assets/vectors/divider.svg?react";
+import DividerSvg from "@/Assets/vectors/divider.svg?react";
 import styles from "./divider.module.css";
 
 const Divider = () => {

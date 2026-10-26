@@ -1,4 +1,4 @@
-import Section from "../section";
+import Section from "../Section";
 export default function TheEnd() {
   return (
     <Section>

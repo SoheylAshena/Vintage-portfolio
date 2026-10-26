@@ -2,7 +2,7 @@
 
 import VideoColorMaskOverlay from "../alpha-video-mask";
 
-import Frame from "@/assets/vectors/project-frame.svg?react";
+import Frame from "@/Assets/vectors/project-frame.svg?react";
 const vido = "/videos/3.1.webm";
 
 import styles from "./project.module.css";

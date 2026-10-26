@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Section from "@/components/section";
-import Project from "@/components/project";
+import Section from "@/Components/Section";
+import Project from "@/Components/Project";
 import projects from "./projects-data";
 
 export default function Projects({

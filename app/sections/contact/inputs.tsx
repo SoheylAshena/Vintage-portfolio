@@ -1,6 +1,6 @@
 import styles from "./contact.module.css";
-import Input from "@/assets/vectors/input.svg?react";
-import Area from "@/assets/vectors/textarea.svg?react";
+import Input from "@/Assets/vectors/input.svg?react";
+import Area from "@/Assets/vectors/textarea.svg?react";
 
 export default function Inputs() {
   return (

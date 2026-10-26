@@ -1,7 +1,7 @@
-import Section from "@/components/section";
+import Section from "@/Components/Section";
 import styles from "./intro.module.css";
-import BrushIntro from "@/components/brush-intro";
-import Leaf from "@/assets/vectors/leaf.svg?react";
+import BrushIntro from "@/Components/brush-intro";
+import Leaf from "@/Assets/vectors/leaf.svg?react";
 import Link from "next/link";
 
 export default function Intro({ loading }: { loading: boolean }) {

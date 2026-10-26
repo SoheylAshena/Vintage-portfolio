@@ -1,8 +1,8 @@
 import Link from "next/link";
-import Section from "@/components/section";
+import Section from "@/Components/Section";
 import styles from "./about.module.css";
-import Frame from "@/assets/vectors/picture-frame.svg?react";
-import VideoAlphaMask from "@/components/alpha-video-mask";
+import Frame from "@/Assets/vectors/picture-frame.svg?react";
+import VideoAlphaMask from "@/Components/alpha-video-mask";
 
 export default function About({
   standalone = false,
