@@ -1,55 +1,24 @@
-# Soheyl Ashena Portfolio
+# Vintage Portfolio
 
-A vintage looking, visually-rich portfolio website built with React and Vite, showcasing projects, skills, and contact information.
+Next.js App Router project with TypeScript, Tailwind CSS, and ESLint.
 
-## Features
+## Getting started
 
-- Interactive sections for About, Projects, Skills, and Contact
-- Custom vector graphics and video backgrounds
-- Animated text and skill tree visualization
-- Responsive design for desktop and mobile
-- Modular component structure
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v18+ recommended)
-- npm or yarn
-
-### Installation
+Install dependencies and start the development server:
 
 ```bash
 npm install
-```
-
-### Development
-
-```bash
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) to view in your browser.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-### Build
+## Scripts
 
-```bash
-npm run build
-```
+- `npm run dev` — start the development server
+- `npm run build` — create a production build
+- `npm run start` — serve the production build
+- `npm run lint` — check source files with ESLint
+- `npm run typecheck` — check TypeScript types
 
-## Project Structure
-
-- `src/Components/` – Reusable UI components (VideoMask, SkillTree, TextReveal, etc.)
-- `src/Layout/` – Page layouts (About, Contact, Intro, Navbar, Projects, Skills)
-- `src/Hooks/` – Custom React hooks
-- `src/Assets/` – Images, fonts, vectors, and videos
-- `public/` – Static assets
-
-## Customization
-
-- Update content in layout components for your own info/projects.
-- Replace assets in `src/Assets/` as needed.
-
-## License
-
-This project is for personal portfolio use. For other uses, please contact the author.
+Routes and layouts live in `app/`. Static files can be placed in `public/`.
