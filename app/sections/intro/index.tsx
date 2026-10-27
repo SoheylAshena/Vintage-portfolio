@@ -4,7 +4,7 @@ import BrushIntro from "@/Components/brush-intro";
 import Leaf from "@/Assets/vectors/leaf.svg?react";
 import Link from "next/link";
 
-export default function Intro({ loading }: { loading: boolean }) {
+export default function Intro() {
   return (
     <Section id="intro" className={styles.intro}>
       <div className={styles.textContainer}>
@@ -34,7 +34,7 @@ export default function Intro({ loading }: { loading: boolean }) {
       <div className={styles.illustration} aria-hidden="true">
         <span className={styles.wordmark}>Lomes</span>
         <div className={styles.leaf}>
-          <BrushIntro paused={loading} Shape={Leaf} duration={3} />
+          <BrushIntro Shape={Leaf} duration={3} />
         </div>
         <span className={styles.caption}>طراحی با هویت · توسعه با دقت</span>
       </div>

@@ -7,37 +7,25 @@ import { HomePerspective, HomeInvitation } from "@/sections/home-story";
 import Divider from "@/Components/Divider";
 
 import TheEnd from "@/Components/the-end";
-import Loading from "@/sections/loading";
-
-import useLoading from "@/Hooks/useLoading";
 
 import gsap from "gsap";
 import { DrawSVGPlugin, ScrollTrigger } from "gsap/all";
 
-import SmoothScroll from "@/Components/smooth-scroll-content";
-
 gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
 
 function App() {
-  const loading = useLoading();
-
   return (
-    <>
-      <Loading finished={!loading} />
-      <SmoothScroll>
-        <main className="content">
-          <Main loading={loading} />
-          <Divider />
-          <HomePerspective />
-          <Services />
-          <Divider />
-          <Projects />
-          <Divider />
-          <HomeInvitation />
-          <TheEnd />
-        </main>
-      </SmoothScroll>
-    </>
+    <main className="content">
+      <Main />
+      <Divider />
+      <HomePerspective />
+      <Services />
+      <Divider />
+      <Projects />
+      <Divider />
+      <HomeInvitation />
+      <TheEnd />
+    </main>
   );
 }
 

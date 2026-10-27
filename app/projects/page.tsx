@@ -1,10 +1,6 @@
-import type { Metadata } from "next";
-import Projects from "@/sections/projects";
+"use client";
 
-export const metadata: Metadata = {
-  title: "نمونه‌کارها",
-  description: "گزیده‌ای از پروژه‌های طراحی و توسعه وب در لومس.",
-};
+import Projects from "@/sections/projects";
 
 export default function ProjectsPage() {
   return (

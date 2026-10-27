@@ -69,7 +69,8 @@
   position: relative;
   display: block;
   color: var(--color-secondary);
-  font-size: 1rem;
+  font-family: var(--font-heading);
+  font-size: 3rem;
   letter-spacing: 0;
   transform: none;
   transition: color 0.3s ease;
@@ -232,7 +233,7 @@
   .navList a {
     color: var(--color-bg);
     padding: 12px 4px;
-    font-size: 1rem;
+    font-size: 3rem;
     transform: none;
     text-align: center;
   }
