@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/sections/navbar";
 import "./globals.css";
+import SmoothScroll from "./Components/smooth-scroll-content";
 
 export const metadata: Metadata = {
   title: {
@@ -20,8 +21,13 @@ export default function RootLayout({
     <html lang="fa" dir="rtl">
       <body>
         <Navbar />
-        {children}
-        <div className="texture"></div>
+
+        <div id="smooth-wrapper">
+          <div id="smooth-content">{children}</div>
+        </div>
+
+        <div className="texture" />
+        <SmoothScroll />
       </body>
     </html>
   );

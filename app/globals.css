@@ -92,7 +92,7 @@ button:focus-visible {
   filter: brightness(0.6) saturate(0);
   pointer-events: none;
   opacity: 0.5;
-  z-index: 1;
+  z-index: 2;
 }
 .projects,
 .services {
