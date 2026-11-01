@@ -4,6 +4,9 @@ import "./globals.css";
 import SmoothScroll from "./Components/smooth-scroll-content";
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/favicon.svg",
+  },
   title: {
     default: "لومس | طراحی و توسعه وب",
     template: "%s | لومس",

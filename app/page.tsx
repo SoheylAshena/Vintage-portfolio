@@ -5,6 +5,7 @@ import Main from "@/sections/intro";
 import Projects from "@/sections/projects";
 import { HomePerspective, HomeInvitation } from "@/sections/home-story";
 import Divider from "@/Components/Divider";
+import Reveal from "@/Components/reveal";
 
 import TheEnd from "@/Components/the-end";
 
@@ -16,15 +17,33 @@ gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
 function App() {
   return (
     <main className="content">
-      <Main />
-      <Divider />
-      <HomePerspective />
-      <Services />
-      <Divider />
-      <Projects />
-      <Divider />
-      <HomeInvitation />
-      <TheEnd />
+      <Reveal>
+        <Main />
+      </Reveal>
+      <Reveal>
+        <Divider />
+      </Reveal>
+      <Reveal>
+        <HomePerspective />
+      </Reveal>
+      <Reveal>
+        <Services />
+      </Reveal>
+      <Reveal>
+        <Divider />
+      </Reveal>
+      <Reveal>
+        <Projects />
+      </Reveal>
+      <Reveal>
+        <Divider />
+      </Reveal>
+      <Reveal>
+        <HomeInvitation />
+      </Reveal>
+      <Reveal>
+        <TheEnd />
+      </Reveal>
     </main>
   );
 }

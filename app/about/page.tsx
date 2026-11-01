@@ -2,12 +2,17 @@
 
 import AboutDetails from "@/sections/about/details";
 import About from "@/sections/about";
+import Reveal from "@/Components/reveal";
 
 export default function AboutPage() {
   return (
     <main className="standalone">
-      <About standalone />
-      <AboutDetails />
+      <Reveal>
+        <About standalone />
+      </Reveal>
+      <Reveal>
+        <AboutDetails />
+      </Reveal>
     </main>
   );
 }

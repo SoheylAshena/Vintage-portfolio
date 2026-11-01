@@ -1,6 +1,6 @@
 "use client";
 
-import VideoColorMaskOverlay from "../alpha-video-mask";
+import Reveal from "@/Components/reveal";
 
 import Frame from "@/Assets/vectors/project-frame.svg?react";
 const vido = "/videos/3.1.webm";
@@ -23,12 +23,7 @@ const Project: React.FC<ProjectProps> = ({
   rotate,
 }) => {
   return (
-    <VideoColorMaskOverlay
-      videoSrc={vido}
-      color="#ffe3ca"
-      inverted={true}
-      rotate={rotate}
-    >
+    <Reveal videoSrc={vido} color="#ffe3ca" inverted={true} rotate={rotate}>
       <div className={`${styles.project} ${right ? styles.reverse : ""}`}>
         <div className={styles.projFrame}>
           <Frame />
@@ -42,7 +37,7 @@ const Project: React.FC<ProjectProps> = ({
           </span>
         </div>
       </div>
-    </VideoColorMaskOverlay>
+    </Reveal>
   );
 };
 
