@@ -1,13 +1,12 @@
 import Link from "next/link";
-import Section from "@/Components/Section";
 
 export function HomePerspective() {
   return (
-    <Section className="editorial-section">
-      <div className="editorial-grid">
-        <header className="section-heading">
+    <section className="w-full">
+      <div className="split-layout">
+        <header className="section-header max-[700px]:mb-0">
           <p className="eyebrow">پیش از اولین کلیک</p>
-          <h2>
+          <h2 className="section-heading mb-6">
             وقتی شما حضور ندارید،
             <br />
             وب‌سایتتان حرف می‌زند.
@@ -24,35 +23,37 @@ export function HomePerspective() {
             سایت باید کنار هم قرار بگیرند تا مخاطب، هم شخصیت کسب‌وکار شما را
             بشناسد و هم قدم بعدی را پیدا کند.
           </p>
-          <p className="editorial-note">یک سایت خوب، گفت‌وگو را شروع می‌کند.</p>
+          <p className="font-heading mt-6 text-2xl">
+            یک سایت خوب، گفت‌وگو را شروع می‌کند.
+          </p>
         </div>
       </div>
-    </Section>
+    </section>
   );
 }
 
 export function HomeInvitation() {
   return (
-    <Section id="contact" className="editorial-section">
-      <div className="invitation">
+    <section id="contact" className="w-full">
+      <div className="mx-auto max-w-[800px] py-6 text-center">
         <p className="eyebrow">فصل بعدی کسب‌وکار شما</p>
-        <h2>
+        <h2 className="section-heading mt-6 mb-6">
           ایده‌تان هنوز کامل نیست؟
           <br />
           از همان‌جا شروع کنیم.
         </h2>
-        <p className="body-copy">
+        <p className="body-copy mx-auto mb-8 max-w-[620px]">
           شاید فقط بدانید سایت فعلی‌تان دیگر شبیه شما نیست. شاید هم برای یک شروع
           تازه آماده‌اید. لازم نیست همه پاسخ‌ها را داشته باشید؛ کافی است بگویید
           چه چیزی می‌خواهید تغییر کند.
         </p>
-        <Link className="primary-link" href="/contact">
-          بیایید درباره‌اش حرف بزنیم <span aria-hidden="true">↖</span>
+        <Link className="button-link" href="/contact">
+          بیایید درباره‌اش حرف بزنیم
         </Link>
-        <p className="invitation-note">
+        <p className="text-secondary mt-5 text-base">
           چند خط درباره کسب‌وکارتان، نقطه شروع خوبی است.
         </p>
       </div>
-    </Section>
+    </section>
   );
 }

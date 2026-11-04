@@ -10,6 +10,10 @@ export const navLinks = [
     href: "/projects",
   },
   {
+    label: "هزینه و تعرفه",
+    href: "/pricing",
+  },
+  {
     label: "درباره لومس",
     href: "/about",
   },

@@ -1,10 +1,9 @@
 import DividerSvg from "@/Assets/vectors/divider.svg?react";
-import styles from "./divider.module.css";
 
 const Divider = () => {
   return (
-    <div className={styles.container}>
-      <DividerSvg className={styles.divider} />
+    <div className="section-gutter flex justify-center max-[1100px]:px-5">
+      <DividerSvg className="w-4/5 max-[1100px]:w-full" />
     </div>
   );
 };

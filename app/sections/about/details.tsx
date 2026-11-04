@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Section from "@/Components/Section";
 
 const principles = [
   {
@@ -36,39 +35,43 @@ const steps = [
 
 export default function AboutDetails() {
   return (
-    <Section className="editorial-section">
-      <header className="section-heading">
+    <section className="w-full">
+      <header className="section-header">
         <p className="eyebrow">معیارهای ما</p>
-        <h2>چیزهایی که از کنارشان ساده نمی‌گذریم.</h2>
+        <h2 className="section-heading">
+          چیزهایی که از کنارشان ساده نمی‌گذریم.
+        </h2>
       </header>
-      <div className="service-grid">
+      <div className="card-grid">
         {principles.map((item) => (
           <article key={item.title}>
-            <h3>{item.title}</h3>
+            <h3 className="my-4 text-3xl">{item.title}</h3>
             <p className="body-copy">{item.text}</p>
           </article>
         ))}
       </div>
-      <div className="process">
-        <header className="section-heading">
+      <div className="mt-20">
+        <header className="section-header">
           <p className="eyebrow">همکاری از نزدیک</p>
-          <h2>در هر مرحله، بدانیم کجا ایستاده‌ایم.</h2>
+          <h2 className="section-heading">
+            در هر مرحله، بدانیم کجا ایستاده‌ایم.
+          </h2>
           <p className="body-copy">
             یک همکاری خوب به گفت‌وگوی روشن نیاز دارد: چه چیزی در حال انجام است،
             چه تصمیمی باید گرفته شود و قدم بعدی چیست.
           </p>
         </header>
-        <ol className="process-grid">
+        <ol className="[&>li]:border-rule grid [list-style-position:inside] list-[persian] grid-cols-4 gap-7 max-[700px]:grid-cols-1 [&>li]:border-t [&>li]:pt-5">
           {steps.map((step) => (
             <li key={step.title}>
-              <h3>{step.title}</h3>
-              <p className="body-copy">{step.text}</p>
+              <h3 className="my-4 text-3xl">{step.title}</h3>
+              <p className="text-secondary mb-5 text-base">{step.text}</p>
             </li>
           ))}
         </ol>
       </div>
-      <div className="editorial-grid closing-note">
-        <h2>
+      <div className="split-layout border-rule mt-20 border-t pt-12">
+        <h2 className="section-heading mb-6">
           شما کسب‌وکارتان را می‌شناسید.
           <br />
           ما برای شنیدن آمده‌ایم.
@@ -80,10 +83,10 @@ export default function AboutDetails() {
             باشد و هم برای مخاطبتان روشن.
           </p>
           <Link className="text-link" href="/contact">
-            درباره همکاری با لومس بنویسید <span aria-hidden="true">↖</span>
+            درباره همکاری با لومس بنویسید
           </Link>
         </div>
       </div>
-    </Section>
+    </section>
   );
 }

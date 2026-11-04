@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import styles from "./text-reveal.module.css";
 
 interface TextRevealProps {
   children: React.ReactNode;
@@ -21,12 +20,12 @@ const TextReveal = ({
   }, [delay, duration]);
 
   return (
-    <div className={styles.container}>
-      <p className={`${styles.text} ${showText ? styles.textVisible : ""}`}>
+    <div className="relative inline-block overflow-hidden">
+      <p className={`relative m-0 ${showText ? "opacity-100" : "opacity-0"}`}>
         {children}
       </p>
       <div
-        className={styles.cover}
+        className="absolute left-0 top-0 h-full w-0 bg-primary animate-[coverSlide_var(--duration)_forwards] [animation-delay:var(--delay)]"
         style={
           {
             "--duration": `${duration}ms`,

@@ -315,20 +315,13 @@ const VideoAlphaMask: React.FC<VideoAlphaMaskProps> = ({
   }, [videoSrc, contextVersion]);
 
   return (
-    <div ref={containerRef} style={{ position: "relative" }}>
+    <div ref={containerRef} className="relative">
       {children}
       <canvas
         ref={canvasRef}
         aria-hidden="true"
-        style={{
-          position: "absolute",
-          width: "100%",
-          height: "100%",
-          top: 0,
-          left: 0,
-          pointerEvents: "none",
-          transform: `rotate(${rotate}deg)`,
-        }}
+        className="pointer-events-none absolute top-0 left-0 h-full w-full"
+        style={{ transform: `rotate(${rotate}deg)` }}
       />
       <video
         ref={videoRef}
@@ -339,15 +332,7 @@ const VideoAlphaMask: React.FC<VideoAlphaMaskProps> = ({
         crossOrigin="anonymous"
         aria-hidden="true"
         // Keep a rendered inline video for Safari's video-to-texture path.
-        style={{
-          position: "absolute",
-          width: 1,
-          height: 1,
-          opacity: 0,
-          pointerEvents: "none",
-          top: 0,
-          left: 0,
-        }}
+        className="pointer-events-none absolute top-0 left-0 h-px w-px opacity-0"
       />
     </div>
   );

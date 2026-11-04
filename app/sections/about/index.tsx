@@ -1,6 +1,4 @@
 import Link from "next/link";
-import Section from "@/Components/Section";
-import styles from "./about.module.css";
 import Frame from "@/Assets/vectors/picture-frame.svg?react";
 
 export default function About({
@@ -10,10 +8,13 @@ export default function About({
 }) {
   const Heading = standalone ? "h1" : "h2";
   return (
-    <Section id="about" className={styles.about}>
+    <section
+      id="about"
+      className="grid w-full grid-cols-[1.3fr_0.7fr] items-center gap-14 max-[700px]:grid-cols-1 max-[700px]:gap-8"
+    >
       <div>
         <p className="eyebrow">درباره لومس / نگاه ما</p>
-        <Heading className={styles.title}>
+        <Heading className="section-heading my-5">
           سلیقه در طراحی،
           <br />
           فکر در هر تصمیم.
@@ -29,18 +30,21 @@ export default function About({
           ثابت می‌ماند، توجه به تناسب طراحی با شخصیت شماست.
         </p>
         <Link className="text-link" href="/contact">
-          با هم از ایده شما شروع کنیم <span aria-hidden="true">↖</span>
+          با هم از ایده شما شروع کنیم
         </Link>
       </div>
-      <div className={styles.seal} aria-hidden="true">
-        <Frame />
-        <span>Lomes</span>
-        <p>
+      <div
+        className="relative flex aspect-square flex-col items-center justify-center text-center max-[700px]:mx-auto max-[700px]:w-full max-[700px]:max-w-80"
+        aria-hidden="true"
+      >
+        <Frame className="absolute inset-0 h-full w-full" />
+        <span className="font-script text-8xl">Lomes</span>
+        <p className="mt-4 text-base">
           با اصالت در طراحی
           <br />
           با دقت در ساخت
         </p>
       </div>
-    </Section>
+    </section>
   );
 }

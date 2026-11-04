@@ -1,5 +1,3 @@
-import Section from "@/Components/Section";
-
 const questions = [
   {
     question: "برای شروع چه اطلاعاتی لازم است؟",
@@ -30,24 +28,24 @@ const questions = [
 
 export default function ContactQuestions() {
   return (
-    <Section className="editorial-section">
-      <div className="editorial-grid">
-        <header className="section-heading">
+    <section className="w-full">
+      <div className="split-layout">
+        <header className="section-header max-[700px]:mb-0">
           <p className="eyebrow">پیش از شروع</p>
-          <h2>شاید سؤال شما هم باشد.</h2>
+          <h2 className="section-heading">شاید سؤال شما هم باشد.</h2>
           <p className="body-copy">
             چند نکته برای اینکه با تصویر روشن‌تری وارد گفت‌وگو شویم.
           </p>
         </header>
-        <div className="questions">
+        <div className="faq">
           {questions.map((item) => (
             <details key={item.question}>
               <summary>{item.question}</summary>
-              <p className="body-copy">{item.answer}</p>
+              <p className="body-copy mb-0">{item.answer}</p>
             </details>
           ))}
         </div>
       </div>
-    </Section>
+    </section>
   );
 }

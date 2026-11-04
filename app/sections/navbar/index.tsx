@@ -3,8 +3,8 @@
 import { useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import DividerSvg from "@/Assets/vectors/divider.svg?react";
 import { navLinks, socialLinks } from "./nav-data";
-import styles from "./navbar.module.css";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,10 +30,10 @@ const Navbar = () => {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <nav className={styles.navbar} aria-label="منوی اصلی">
-      <div className={styles.mobileHeader}>
+    <nav className="navbar" aria-label="منوی اصلی">
+      <div className="navbar-header">
         <Link
-          className={styles.logo}
+          className="navbar-logo"
           href="/"
           aria-label="لومس، صفحه اصلی"
           onClick={closeMenu}
@@ -43,31 +43,34 @@ const Navbar = () => {
 
         <button
           ref={menuButtonRef}
-          className={styles.menuToggle}
+          className="navbar-toggle"
           type="button"
           aria-expanded={isMenuOpen}
           aria-controls={menuId}
           aria-label={isMenuOpen ? "بستن منو" : "باز کردن منو"}
           onClick={() => setIsMenuOpen((open) => !open)}
         >
-          <span className={styles.menuLabel}>
-            {isMenuOpen ? "بستن" : "منو"}
-          </span>
-          <span className={styles.menuIcon} aria-hidden="true">
+          <span>{isMenuOpen ? "بستن" : "منو"}</span>
+          <span className="menu-icon" aria-hidden="true">
             <span />
             <span />
           </span>
         </button>
       </div>
 
-      <div className={styles.menuContent} id={menuId} data-open={isMenuOpen}>
-        <ul className={styles.navList}>
+      <div className="navbar-divider" aria-hidden="true">
+        <DividerSvg className="navbar-divider-image" />
+      </div>
+
+      <div className="navbar-menu" id={menuId} data-open={isMenuOpen}>
+        <ul className="navbar-links">
           {navLinks.map(({ label, href }) => (
             <li key={href}>
               <Link
                 href={href}
                 onClick={closeMenu}
                 aria-current={pathname === href ? "page" : undefined}
+                className="navbar-link"
               >
                 {label}
               </Link>
@@ -76,12 +79,13 @@ const Navbar = () => {
         </ul>
 
         {availableSocialLinks.length > 0 && (
-          <ul className={styles.social} aria-label="شبکه‌های اجتماعی">
+          <ul className="navbar-socials">
             {availableSocialLinks.map(({ label, url, icon: Icon }) => (
               <li key={label}>
                 <a
                   href={url}
                   aria-label={label}
+                  className="navbar-social-link"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

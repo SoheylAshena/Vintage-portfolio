@@ -4,19 +4,16 @@ import useContact from "@/Hooks/useContact";
 import Inputs from "./inputs";
 import SendButton from "./send-button";
 import SubmitMessage from "./submit-message";
-import Section from "@/Components/Section";
-
-import styles from "./contact.module.css";
 
 const Contact = ({ standalone = false }: { standalone?: boolean }) => {
   const Heading = standalone ? "h1" : "h2";
   const { isSending, isSent, error, sendEmail, form } = useContact();
 
   return (
-    <Section className={styles.contact} id="contact">
-      <header className="section-heading">
+    <section className="w-full" id="contact">
+      <header className="section-header">
         <p className="eyebrow">شروع گفت‌وگو / تماس با لومس</p>
-        <Heading>شما از مقصد بگویید.</Heading>
+        <Heading className="section-heading">شما از مقصد بگویید.</Heading>
         <p className="body-copy">
           می‌خواهید بهتر معرفی شوید، مسیر انتخاب محصول را ساده کنید یا به
           سایتتان هویت تازه‌ای بدهید؟ از تغییری که در ذهن دارید بنویسید؛ جزئیات
@@ -28,8 +25,12 @@ const Contact = ({ standalone = false }: { standalone?: boolean }) => {
           بررسی کنیم.
         </p>
       </header>
-      <form className={styles.form} ref={form} onSubmit={sendEmail}>
-        <p className="form-note">
+      <form
+        className="flex max-w-[760px] flex-col gap-6"
+        ref={form}
+        onSubmit={sendEmail}
+      >
+        <p className="text-secondary text-base">
           همه فیلدها ضروری‌اند. ایمیلی وارد کنید که بتوانیم پاسخ گفت‌وگو را به
           آن بفرستیم.
         </p>
@@ -37,7 +38,7 @@ const Contact = ({ standalone = false }: { standalone?: boolean }) => {
         <SendButton isSending={isSending} />
         <SubmitMessage isSent={isSent} error={error} />
       </form>
-    </Section>
+    </section>
   );
 };
 
