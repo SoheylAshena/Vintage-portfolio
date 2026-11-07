@@ -14,7 +14,7 @@ interface RevealProps {
 export default function Reveal({
   children,
   videoSrc = "/videos/7.webm",
-  color = "#ffe3ca",
+  color,
   inverted = false,
   playbackRate = 4,
   rotate = 0,

@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
 
 function App() {
   return (
-    <main className="home-shell">
+    <main>
       <Main />
       <Divider />
       <HomePerspective />

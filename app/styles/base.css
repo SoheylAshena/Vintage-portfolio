@@ -1,0 +1,53 @@
+@layer base {
+  body {
+    background: var(--color-bg);
+    color: var(--color-primary);
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+  }
+
+  main {
+    max-width: 1500px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 0 220px 0 56px;
+  }
+
+  main > section {
+    padding: 100px 0;
+    scroll-margin-top: 100px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+  }
+
+  svg {
+    fill: currentColor;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  summary:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+  }
+
+  @media (max-width: 1100px) {
+    main {
+      padding: 100px 24px 0;
+    }
+  }
+
+  @media (max-width: 700px) {
+    main > section {
+      padding-top: 64px;
+      padding-bottom: 64px;
+    }
+  }
+}

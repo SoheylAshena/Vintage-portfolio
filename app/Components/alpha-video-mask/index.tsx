@@ -10,7 +10,7 @@ interface VideoAlphaMaskProps {
   videoSrc: string;
   width?: number;
   height?: number;
-  color: string;
+  color?: string;
   inverted?: boolean;
   playbackRate?: number;
   children: React.ReactNode;
@@ -234,7 +234,9 @@ const VideoAlphaMask: React.FC<VideoAlphaMaskProps> = ({
       video.playbackRate = next.playbackRate;
       if (colorContext) {
         colorContext.clearRect(0, 0, 1, 1);
-        colorContext.fillStyle = next.color;
+        colorContext.fillStyle =
+          next.color ||
+          getComputedStyle(canvas).getPropertyValue("--color-bg").trim();
         colorContext.fillRect(0, 0, 1, 1);
         const [r, g, b, a] = colorContext.getImageData(0, 0, 1, 1).data;
         const alpha = a / 255;

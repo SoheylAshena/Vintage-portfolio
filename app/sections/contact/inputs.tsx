@@ -15,7 +15,7 @@ export default function Inputs() {
             required
             className="h-full"
           />
-          <Input aria-hidden="true" />
+          <Input className="decorative-frame" aria-hidden="true" />
         </span>
       </label>
       <label className="form-field">
@@ -30,7 +30,7 @@ export default function Inputs() {
             required
             className="h-full"
           />
-          <Input aria-hidden="true" />
+          <Input className="decorative-frame" aria-hidden="true" />
         </span>
       </label>
       <label className="form-field">
@@ -41,9 +41,9 @@ export default function Inputs() {
             rows={5}
             placeholder="کسب‌وکار ما… است. از سایت می‌خواهیم… . زمان‌بندی مدنظرمان… است."
             required
-            className="min-h-[180px] resize-y"
+            className="min-h-45 resize-y"
           />
-          <Area aria-hidden="true" />
+          <Area className="decorative-frame" aria-hidden="true" />
         </span>
       </label>
     </>

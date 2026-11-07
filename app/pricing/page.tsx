@@ -64,17 +64,17 @@ export default function PricingPage() {
         <p className="eyebrow">هزینه و تعرفه / لومس</p>
         <h1
           id="pricing-title"
-          className="my-5 mb-6 max-w-[760px] text-[clamp(2.7rem,5vw,4.5rem)]"
+          className="mt-5 mb-6 max-w-190 text-6xl max-[700px]:text-4xl"
         >
           قیمت هر سایت، از نیاز همان کسب‌وکار شروع می‌شود.
         </h1>
-        <p className="body-copy max-w-[680px]">
+        <p className="body-copy max-w-170">
           دامنه و نیازهای پروژه‌ها با هم فرق دارند؛ برای همین ابتدا مشخص می‌کنیم
           سایت شما چه چیزی لازم دارد، بعد برآورد روشن و متناسب با همان کار ارائه
           می‌کنیم.
         </p>
         <div className="actions">
-          <Link className="button-link" href="/contact">
+          <Link className="button" href="/contact">
             درخواست برآورد پروژه
           </Link>
           <a className="text-link" href="#scopes">
@@ -95,48 +95,40 @@ export default function PricingPage() {
             می‌شود.
           </p>
         </header>
-        <div className="border-rule grid grid-cols-3 border-y max-[900px]:grid-cols-1">
+        <div className="card-grid">
           {scopes.map((scope) => (
-            <article
-              className="[&+article]:border-rule flex min-h-[410px] flex-col px-6 py-7 max-[900px]:min-h-0 max-[900px]:px-0 [&+article]:border-s max-[900px]:[&+article]:border-s-0 max-[900px]:[&+article]:border-t"
-              key={scope.number}
-            >
+            <article key={scope.number}>
               <p className="eyebrow">{scope.number}</p>
-              <h3 className="my-3 text-[1.8rem]">{scope.title}</h3>
+              <h3 className="card-heading">{scope.title}</h3>
               <p className="text-secondary">{scope.description}</p>
-              <ul className="text-secondary my-5 grid gap-2 ps-5 text-base max-[900px]:mb-6">
+              <ul className="my-5 grid gap-2 pr-5 text-base text-secondary">
                 {scope.details.map((detail) => (
                   <li key={detail}>{detail}</li>
                 ))}
               </ul>
-              <p className="border-rule mt-auto border-t pt-[18px] text-base">
-                برآورد اختصاصی پس از گفت‌وگو
-              </p>
+              <p className="card-note">برآورد اختصاصی پس از گفت‌وگو</p>
             </article>
           ))}
         </div>
       </section>
 
       <section aria-labelledby="factors-title">
-        <div className="mb-8 max-w-[640px]">
+        <div className="mb-8 max-w-160">
           <p className="eyebrow">چطور برآورد می‌کنیم؟</p>
-          <h2
-            id="factors-title"
-            className="mt-3 text-[clamp(2.25rem,4vw,3.25rem)]"
-          >
+          <h2 id="factors-title" className="mt-3 text-5xl max-[700px]:text-4xl">
             چه چیزهایی روی هزینه اثر می‌گذارند؟
           </h2>
         </div>
-        <div className="border-rule border-t">
+        <div className="border-t border-rule">
           {factors.map((factor, index) => (
             <article
-              className="border-rule grid grid-cols-[100px_1fr] gap-6 border-b py-6 max-[700px]:grid-cols-[48px_1fr] max-[700px]:gap-3"
+              className="grid grid-cols-[100px_1fr] gap-6 border-b border-rule py-6 max-[700px]:grid-cols-[48px_1fr] max-[700px]:gap-3"
               key={factor.title}
             >
               <span className="eyebrow">۰{index + 1}</span>
               <div>
-                <h3 className="mb-2 text-[1.8rem]">{factor.title}</h3>
-                <p className="body-copy mb-0 max-w-[680px]">{factor.text}</p>
+                <h3 className="mb-2 text-3xl">{factor.title}</h3>
+                <p className="body-copy mb-0 max-w-170">{factor.text}</p>
               </div>
             </article>
           ))}
@@ -150,12 +142,9 @@ export default function PricingPage() {
             مسیر رسیدن به پیشنهاد روشن
           </h2>
         </header>
-        <ol className="grid list-none grid-cols-3 gap-7 max-[700px]:grid-cols-1 max-[700px]:gap-4">
+        <ol className="steps-list">
           {steps.map((step, index) => (
-            <li
-              className="border-rule min-h-[150px] border-t pt-4 max-[700px]:min-h-0"
-              key={step}
-            >
+            <li key={step}>
               <span className="eyebrow">{`۰${index + 1}`}</span>
               <p className="mt-4 max-w-80 max-[700px]:mt-2">{step}</p>
             </li>
@@ -163,16 +152,16 @@ export default function PricingPage() {
         </ol>
       </section>
 
-      <section className="pricing-contact border-rule border-t text-center">
+      <section className="border-t border-rule text-center">
         <p className="eyebrow">قدم اول ساده است</p>
-        <h2 className="mt-3 text-[clamp(2.25rem,4vw,3.25rem)]">
+        <h2 className="mt-3 text-5xl max-[700px]:text-4xl">
           درباره سایت موردنظرتان بگویید.
         </h2>
-        <p className="body-copy mx-auto my-4 mb-6 max-w-[620px]">
+        <p className="centered-copy">
           معرفی کوتاه کسب‌وکار، هدف سایت و هر جزئیاتی که از حالا می‌دانید، برای
           شروع برآورد کافی است.
         </p>
-        <Link className="button-link" href="/contact">
+        <Link className="button" href="/contact">
           گفت‌وگو درباره پروژه
         </Link>
       </section>

@@ -22,17 +22,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl">
-      <body className="bg-bg text-primary font-body">
+      <body>
         <Navbar />
 
         <div id="smooth-wrapper">
           <div id="smooth-content">{children}</div>
         </div>
 
-        <div
-          aria-hidden="true"
-          className="pointer-events-none fixed inset-0 z-2 bg-[url('/images/Texture.jpg')] bg-repeat bg-size-[10%] opacity-50 mix-blend-hard-light brightness-[0.6] saturate-0 max-[1100px]:bg-size-[50%]"
-        />
+        <div aria-hidden="true" className="texture" />
         <SmoothScroll />
       </body>
     </html>

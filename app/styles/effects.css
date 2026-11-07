@@ -1,0 +1,45 @@
+@layer components {
+  .texture {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: url("/images/Texture.jpg") repeat;
+    background-size: 10%;
+    opacity: 0.5;
+    mix-blend-mode: hard-light;
+    filter: brightness(0.6) saturate(0);
+  }
+
+  .text-reveal-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--color-primary);
+    animation-name: cover-slide;
+    animation-fill-mode: forwards;
+  }
+
+  @media (max-width: 1100px) {
+    .texture {
+      background-size: 50%;
+    }
+  }
+}
+
+@keyframes cover-slide {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}

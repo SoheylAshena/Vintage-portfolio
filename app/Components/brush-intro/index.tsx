@@ -24,7 +24,7 @@ const BrushIntro: React.FC<BrushIntroProps> = ({
         ease: "power2.in",
       });
     },
-    { scope: shapeRef }
+    { scope: shapeRef },
   );
 
   return <Shape className={className} ref={shapeRef} />;

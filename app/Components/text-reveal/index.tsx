@@ -21,17 +21,15 @@ const TextReveal = ({
 
   return (
     <div className="relative inline-block overflow-hidden">
-      <p className={`relative m-0 ${showText ? "opacity-100" : "opacity-0"}`}>
+      <p className={`relative ${showText ? "opacity-100" : "opacity-0"}`}>
         {children}
       </p>
       <div
-        className="absolute left-0 top-0 h-full w-0 bg-primary animate-[coverSlide_var(--duration)_forwards] [animation-delay:var(--delay)]"
-        style={
-          {
-            "--duration": `${duration}ms`,
-            "--delay": `${delay}ms`,
-          } as React.CSSProperties & Record<string, string>
-        }
+        className="text-reveal-cover"
+        style={{
+          animationDuration: `${duration}ms`,
+          animationDelay: `${delay}ms`,
+        }}
       ></div>
     </div>
   );

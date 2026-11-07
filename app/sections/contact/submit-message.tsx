@@ -7,11 +7,11 @@ const SubmitMessage = ({ isSent, error }: SubmitMessageInterface) => {
   return (
     <div role="status" aria-live="polite">
       {isSent && (
-        <p className="text-lg text-[#31512e]">
+        <p className="text-success">
           پیام شما با موفقیت ارسال شد. از آشنایی با شما خوشحالیم.
         </p>
       )}
-      {error && <p className="text-lg text-[#922e20]">{error}</p>}
+      {error && <p className="text-error">{error}</p>}
     </div>
   );
 };

@@ -28,9 +28,9 @@ const questions = [
 
 export default function ContactQuestions() {
   return (
-    <section className="w-full">
+    <section>
       <div className="split-layout">
-        <header className="section-header max-[700px]:mb-0">
+        <header className="section-header">
           <p className="eyebrow">پیش از شروع</p>
           <h2 className="section-heading">شاید سؤال شما هم باشد.</h2>
           <p className="body-copy">
@@ -41,7 +41,7 @@ export default function ContactQuestions() {
           {questions.map((item) => (
             <details key={item.question}>
               <summary>{item.question}</summary>
-              <p className="body-copy mb-0">{item.answer}</p>
+              <p className="body-copy">{item.answer}</p>
             </details>
           ))}
         </div>

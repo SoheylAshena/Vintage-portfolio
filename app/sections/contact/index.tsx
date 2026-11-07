@@ -10,7 +10,7 @@ const Contact = ({ standalone = false }: { standalone?: boolean }) => {
   const { isSending, isSent, error, sendEmail, form } = useContact();
 
   return (
-    <section className="w-full" id="contact">
+    <section id="contact">
       <header className="section-header">
         <p className="eyebrow">شروع گفت‌وگو / تماس با لومس</p>
         <Heading className="section-heading">شما از مقصد بگویید.</Heading>
@@ -26,11 +26,11 @@ const Contact = ({ standalone = false }: { standalone?: boolean }) => {
         </p>
       </header>
       <form
-        className="flex max-w-[760px] flex-col gap-6"
+        className="flex max-w-190 flex-col gap-6"
         ref={form}
         onSubmit={sendEmail}
       >
-        <p className="text-secondary text-base">
+        <p className="text-base text-secondary">
           همه فیلدها ضروری‌اند. ایمیلی وارد کنید که بتوانیم پاسخ گفت‌وگو را به
           آن بفرستیم.
         </p>

@@ -35,7 +35,7 @@ const steps = [
 
 export default function AboutDetails() {
   return (
-    <section className="w-full">
+    <section>
       <header className="section-header">
         <p className="eyebrow">معیارهای ما</p>
         <h2 className="section-heading">
@@ -45,7 +45,7 @@ export default function AboutDetails() {
       <div className="card-grid">
         {principles.map((item) => (
           <article key={item.title}>
-            <h3 className="my-4 text-3xl">{item.title}</h3>
+            <h3 className="card-heading">{item.title}</h3>
             <p className="body-copy">{item.text}</p>
           </article>
         ))}
@@ -61,17 +61,17 @@ export default function AboutDetails() {
             چه تصمیمی باید گرفته شود و قدم بعدی چیست.
           </p>
         </header>
-        <ol className="[&>li]:border-rule grid [list-style-position:inside] list-[persian] grid-cols-4 gap-7 max-[700px]:grid-cols-1 [&>li]:border-t [&>li]:pt-5">
+        <ol className="process-list">
           {steps.map((step) => (
             <li key={step.title}>
-              <h3 className="my-4 text-3xl">{step.title}</h3>
-              <p className="text-secondary mb-5 text-base">{step.text}</p>
+              <h3 className="card-heading">{step.title}</h3>
+              <p className="mb-5 text-base text-secondary">{step.text}</p>
             </li>
           ))}
         </ol>
       </div>
-      <div className="split-layout border-rule mt-20 border-t pt-12">
-        <h2 className="section-heading mb-6">
+      <div className="split-layout section-outro">
+        <h2 className="section-heading">
           شما کسب‌وکارتان را می‌شناسید.
           <br />
           ما برای شنیدن آمده‌ایم.

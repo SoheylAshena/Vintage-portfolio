@@ -21,7 +21,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="w-full scroll-mt-[100px]">
+    <section id="services">
       <header className="section-header">
         <p className="eyebrow">لومس چه کمکی می‌کند؟</p>
         <h2 className="section-heading">شما کجای مسیر هستید؟</h2>
@@ -34,11 +34,9 @@ export default function Services() {
         {services.map((service) => (
           <article key={service.title}>
             <p className="eyebrow">{service.label}</p>
-            <h3 className="my-4 text-3xl">{service.title}</h3>
+            <h3 className="card-heading">{service.title}</h3>
             <p className="body-copy">{service.text}</p>
-            <p className="eyebrow border-rule mt-auto border-t pt-5">
-              {service.detail}
-            </p>
+            <p className="card-note">{service.detail}</p>
           </article>
         ))}
       </div>

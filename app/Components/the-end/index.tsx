@@ -1,7 +1,7 @@
 export default function TheEnd() {
   return (
-    <section className="w-full">
-      <footer className="border-rule mt-[60px] border-t py-[60px] text-center">
+    <section>
+      <footer className="mt-15 border-t border-rule py-15 text-center">
         <p className="font-script text-[5rem]" lang="en" dir="ltr">
           Lomes
         </p>

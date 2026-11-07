@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "Lomes Naskh";
+  src: url("/fonts/Far_Naskh.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lomes Nastaliq";
+  src: url("/fonts/IranNastaliq.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lovers Quarrel";
+  src: url("/fonts/lovers-quarrel-regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@theme {
+  --font-body: "Lomes Naskh", Tahoma, serif;
+  --font-heading: "Lomes Nastaliq", "Lomes Naskh", serif;
+  --font-script: "Lovers Quarrel", cursive;
+  --color-bg: #ffe3ca;
+  --color-primary: #773800;
+  --color-secondary: #685644;
+  --color-accent: #502500;
+  --color-rule-light: #ffe3ca40;
+  --color-rule: #77380040;
+  --color-success: #31512e;
+  --color-error: #922e20;
+}

@@ -8,13 +8,10 @@ export default function About({
 }) {
   const Heading = standalone ? "h1" : "h2";
   return (
-    <section
-      id="about"
-      className="grid w-full grid-cols-[1.3fr_0.7fr] items-center gap-14 max-[700px]:grid-cols-1 max-[700px]:gap-8"
-    >
+    <section id="about" className="hero-layout">
       <div>
         <p className="eyebrow">درباره لومس / نگاه ما</p>
-        <Heading className="section-heading my-5">
+        <Heading className="section-heading">
           سلیقه در طراحی،
           <br />
           فکر در هر تصمیم.
@@ -37,7 +34,7 @@ export default function About({
         className="relative flex aspect-square flex-col items-center justify-center text-center max-[700px]:mx-auto max-[700px]:w-full max-[700px]:max-w-80"
         aria-hidden="true"
       >
-        <Frame className="absolute inset-0 h-full w-full" />
+        <Frame className="decorative-frame" />
         <span className="font-script text-8xl">Lomes</span>
         <p className="mt-4 text-base">
           با اصالت در طراحی

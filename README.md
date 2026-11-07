@@ -1,6 +1,6 @@
 # Vintage Portfolio
 
-A portfolio built with the Next.js App Router, TypeScript, and CSS Modules.
+A portfolio built with the Next.js App Router, TypeScript, and Tailwind CSS.
 
 ## Getting started
 
@@ -43,3 +43,15 @@ The navbar uses the App Router routes `/projects`, `/about`, and `/contact`; the
 - `corepack pnpm start` — serve the production build
 - `corepack pnpm lint` — check source files with ESLint
 - `corepack pnpm typecheck` — check TypeScript types
+
+## Styling
+
+`app/globals.css` is the single CSS entry point. `app/styles/theme.css` owns fonts and colors, `base.css` owns page defaults and spacing, `shared.css` owns reusable patterns, and `effects.css` owns the texture and reveal animation. Navigation and contact styles live beside their components. Use Tailwind utilities for simple, local layout. Keep shared rules in the components layer so utilities can override them predictably.
+
+- Use ordinary padding and margin, or explicit top/right/bottom/left properties. The app uses a Persian right-to-left layout.
+- Reuse shared classes such as `button`, `card-grid`, and `section-heading`.
+- Avoid `@apply`, nested selectors, and complicated arbitrary utility selectors.
+- Rely on Tailwind's reset and inherited styles instead of repeating defaults.
+- Use 700px for small layouts, 900px for stacked cards, and 1100px for the mobile navigation.
+
+Page gutters belong to `main`; direct child sections only add vertical spacing. Keep one-off layout utilities in JSX, extract a shared class when a pattern repeats, and keep responsive overrides after their base rules. Dynamic animation values may use inline styles. Prettier reads the Tailwind entry point to sort custom theme utilities consistently.

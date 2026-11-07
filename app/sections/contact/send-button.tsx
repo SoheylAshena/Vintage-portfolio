@@ -4,7 +4,7 @@ interface SendButtonInterface {
 
 const SendButton = ({ isSending }: SendButtonInterface) => {
   return (
-    <button type="submit" disabled={isSending} className="send-button">
+    <button type="submit" disabled={isSending} className="button w-full">
       {isSending ? <span>در حال ارسال…</span> : "ارسال پیام"}
     </button>
   );

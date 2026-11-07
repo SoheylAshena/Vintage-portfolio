@@ -9,7 +9,7 @@ export default function Projects({
 }) {
   const Heading = standalone ? "h1" : "h2";
   return (
-    <section id="projects" className="w-full scroll-mt-[100px]">
+    <section id="projects">
       <header className="section-header">
         <p className="eyebrow">
           {standalone
@@ -39,7 +39,7 @@ export default function Projects({
             />
           </a>
           {standalone && (
-            <div className="max-w-[760px] py-0 pb-8">
+            <div className="max-w-190 pb-8">
               <p className="eyebrow">زمینه پروژه</p>
               <p className="body-copy mt-3">{project.context}</p>
             </div>
@@ -47,7 +47,7 @@ export default function Projects({
         </article>
       ))}
       {standalone ? (
-        <div className="split-layout border-rule mt-20 border-t pt-12">
+        <div className="split-layout section-outro">
           <h2 className="section-heading">
             پروژه بعدی می‌تواند دنیای شما باشد.
           </h2>
